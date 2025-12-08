@@ -1,0 +1,582 @@
+/* ========================================
+   1. CONFIGURAÇÃO GLOBAL E VARIÁVEIS
+   ======================================== */
+
+/* Define cores dinâmicas via CSS Custom Properties para tema claro */
+:root {
+    --bg-color: white;
+    --card-bg: white;
+    --text-color: #555;
+    --title-color: #667eea;
+    --subtitle-color: #764ba2;
+    --border-color: #e0e0e0;
+    --section-bg: #f8f9fa;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Sobrescreve as variáveis quando tema escuro está ativo */
+body.dark-mode {
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #e6e6e6;
+    --title-color: #a3b8ff;
+    --subtitle-color: #c7a4ff;
+    --border-color: #2a2a40;
+    --section-bg: #0f3460;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Reset universal: remove margens, paddings e aplica box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   2. ESTILOS BASE DO DOCUMENTO
+   ======================================== */
+
+/* Configuração base: fonte, cor de fundo, altura mínima, padding */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    min-height: 100vh;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+/* Container principal: centraliza, adiciona sombra e border-radius */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+
+/* ========================================
+   3. HEADER E NAVEGAÇÃO
+   ======================================== */
+
+/* Cabeçalho com gradiente, padding e cor branca */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 50px 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Título principal com sombra */
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu de navegação: remove bullets e organiza em linha horizontal */
+.menu {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Botão para alternar tema claro/escuro */
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(15deg);
+}
+
+
+/* ========================================
+   4. CONTEÚDO PRINCIPAL E SEÇÕES
+   ======================================== */
+
+/* Padding para seções internas */
+.content {
+    padding: 40px;
+}
+
+/* Estilo base para todas as sections */
+.section {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* Títulos das seções com linha decorativa */
+.section h2 {
+    color: var(--title-color);
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--title-color);
+    padding-bottom: 10px;
+}
+
+/* Parágrafos nas seções */
+.section p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+
+/* ========================================
+   5. SEÇÃO SOBRE - PERFIL
+   ======================================== */
+
+/* Layout flexível para nome e foto lado a lado */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.profile-name {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Nome grande e colorido */
+.profile-name h1 {
+    font-size: 3em;
+    color: var(--title-color);
+    margin-bottom: 10px;
+}
+
+/* Subtítulo (profissão) */
+.profile-name .subtitle {
+    font-size: 1.5em;
+    color: var(--subtitle-color);
+    font-weight: 500;
+}
+
+/* Foto de perfil: circular com border e efeito hover */
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--title-color);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   6. SEÇÃO SOBRE - DESCRIÇÃO
+   ======================================== */
+
+/* Container da descrição pessoal */
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-section h2 {
+    color: var(--title-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--title-color);
+    padding-bottom: 10px;
+}
+
+.about-section p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+
+/* ========================================
+   7. SEÇÃO HABILIDADES
+   ======================================== */
+
+/* Container das habilidades com fundo destacado */
+.skills {
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--section-bg);
+    border-radius: 10px;
+}
+
+.skills h3 {
+    color: var(--subtitle-color);
+    margin-bottom: 15px;
+}
+
+/* Grid responsivo das habilidades */
+.skills ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+/* Cards das habilidades com barra lateral colorida */
+.skills li {
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid var(--title-color);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+
+/* ========================================
+   8. SEÇÃO FORMAÇÃO
+   ======================================== */
+
+/* Cards de educação com estilo destacado */
+.education-item {
+    background: var(--section-bg);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--title-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.education-item h3 {
+    color: var(--subtitle-color);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.education-item p {
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+
+/* ========================================
+   9. SEÇÃO PROJETOS - GRID E CARDS
+   ======================================== */
+
+/* Grid responsivo que se adapta ao tamanho da tela */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Cards com gradiente, efeito hover e overflow hidden */
+.project-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 0;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Efeito de elevação ao passar o mouse */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do projeto com altura fixa */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Título do projeto */
+.project-card h3 {
+    color: var(--title-color);
+    margin: 15px 20px 10px 20px;
+}
+
+/* Descrição do projeto */
+.project-card p {
+    color: var(--text-color);
+    font-size: 0.95em;
+    margin: 0 20px 15px 20px;
+}
+
+/* Tags de status e tecnologias */
+.tag {
+    display: inline-block;
+    background: var(--title-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    margin: 0 20px 20px 20px;
+}
+
+
+/* ========================================
+   10. SEÇÃO CONTATO - FORMULÁRIO
+   ======================================== */
+
+/* Container do formulário com largura máxima */
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Grupo de campos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label dos inputs */
+.form-group label {
+    display: block;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Inputs e textareas com borda e transição */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    background: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+/* Focus dos inputs muda a cor da borda */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--title-color);
+}
+
+
+/* ========================================
+   11. SEÇÃO CONTATO - BOTÃO E FEEDBACK
+   ======================================== */
+
+/* Botão de envio com gradiente */
+.submit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Mensagem de feedback do formulário */
+.form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+/* Mensagem de sucesso em verde */
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+/* Mensagem de erro em vermelho */
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+
+/* ========================================
+   12. SEÇÃO CONTATO - REDES SOCIAIS
+   ======================================== */
+
+/* Container das redes sociais */
+.contact-socials {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-socials h3 {
+    color: var(--subtitle-color);
+    margin-bottom: 25px;
+    font-size: 1.4em;
+}
+
+/* Row com ícones das redes sociais */
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Links dos ícones sociais com fundo e efeito hover */
+.social-icons-row a {
+    color: var(--title-color);
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Fundo dos ícones ajustado para modo escuro */
+body.dark-mode .social-icons-row a {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Efeito hover dos ícones */
+.social-icons-row a:hover {
+    transform: translateY(-5px) scale(1.1);
+    color: var(--subtitle-color);
+    background: rgba(102, 126, 234, 0.15);
+}
+
+/* Links sociais alternativos (backup) */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: white;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    color: #a3b8ff;
+}
+
+
+/* ========================================
+   13. FOOTER
+   ======================================== */
+
+/* Rodapé com fundo escuro, texto centralizado e padding */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+
+/* ========================================
+   14. RESPONSIVIDADE - MOBILE
+   ======================================== */
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-name h1 {
+        font-size: 2em;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Grid de projetos em uma coluna no mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills ul {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icons-row {
+        gap: 15px;
+    }
+}

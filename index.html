@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ========================================
+     HEAD - Metadados e Configuração
+     ======================================== -->
 <head>
-    <!-- ========================================
-        SEÇÃO META - Configuração do Documento
-        ======================================== -->
-    
-    <!-- Define codificação de caracteres (acentos, símbolos especiais) -->
+    <!-- Codificação de caracteres (acentos, símbolos) -->
     <meta charset="UTF-8">
     
-    <!-- Viewport: garante que o site seja responsivo em mobile -->
+    <!-- Viewport responsivo para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Título que aparece na aba do navegador -->
     <title>Felipe Chaves Portfolio</title>
     
-    <!-- Link para arquivo CSS externo com todos os estilos -->
+    <!-- Link para arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- ========================================
+     BODY - Conteúdo da Página
+     ======================================== -->
 <body>
     <!-- ========================================
-        1. CONTAINER PRINCIPAL
-        ======================================== -->
-    <!-- Div que envolve todo o conteúdo (define max-width e centraliza) -->
+         1. CONTAINER PRINCIPAL
+         ======================================== -->
     <div class="container">
         
         <!-- ========================================
-            2. HEADER - Navegação e Branding
-            ======================================== -->
+             2. HEADER - Navegação e Branding
+             ======================================== -->
         <header>
             <!-- Saudação principal com efeito typewriter -->
             <h1>Hello!</h1>
@@ -35,10 +37,22 @@
             <!-- Botão flutuante para alternar tema claro/escuro -->
             <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
                 <!-- Ícone lua (mostra no tema claro) -->
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
                 
                 <!-- Ícone sol (mostra no tema escuro) -->
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
             </button>
 
             <!-- Menu de navegação com links âncora para as seções -->
@@ -53,22 +67,22 @@
         </header>
 
         <!-- ========================================
-            3. MAIN - Conteúdo Principal
-            ======================================== -->
+             3. MAIN - Conteúdo Principal
+             ======================================== -->
         <main class="content">
             
             <!-- ========================================
-                SEÇÃO 1: SOBRE
-                ======================================== -->
+                 SEÇÃO 1: SOBRE
+                 ======================================== -->
             <section id="sobre" class="section">
                 
                 <!-- Subseção 1.1: Perfil (Nome + Foto) -->
                 <div class="profile-header">
                     <div class="profile-name">
-                        <!-- Nome completo do desenvolvedor -->
+                        <!-- Nome completo -->
                         <h1>Felipe Augusto Moreira Chaves</h1>
                         <!-- Profissão/Cargo -->
-                        <p class="subtitle">Desenvolvedor Web e profissional na area de automação </p>
+                        <p class="subtitle">Desenvolvedor Web e Profissional em Automação</p>
                     </div>
                     <!-- Foto de perfil circular -->
                     <img src="img/perfil.jpg" alt="Foto de Perfil" class="profile-image">
@@ -78,7 +92,7 @@
                 <div class="about-section">
                     <h2>Sobre Mim</h2>
                     <p>Olá! Sou um desenvolvedor apaixonado por tecnologia e inovação, que nas horas vagas gosta de jogar bastante.</p>
-                    <p>Tenho experiência em redes de computadores e automações residenciais e industriais criando soluções criativas e funcionais para diversos projetos.</p>
+                    <p>Tenho experiência em redes de computadores e automações residenciais e industriais, criando soluções criativas e funcionais para diversos projetos.</p>
                 </div>
 
                 <!-- Subseção 1.3: Habilidades (Grid) -->
@@ -95,56 +109,62 @@
             </section>
 
             <!-- ========================================
-                SEÇÃO 2: FORMAÇÃO
-                ======================================== -->
+                 SEÇÃO 2: FORMAÇÃO
+                 ======================================== -->
             <section id="formacao" class="section">
                 <h2>Minha Formação</h2>
                 
                 <!-- Item de educação 1: Curso Superior -->
                 <div class="education-item">
-                    <h3>Ciencias da Computação</h3>
-                    <p><strong>Uninter - Centro Universitario Internacional</strong> |2025 - Cursando</p>
+                    <h3>Ciência da Computação</h3>
+                    <p><strong>Uninter - Centro Universitário Internacional</strong> | 2025 - Cursando</p>
                 </div>
                 
-                <!-- Item de educação 2: Curso Complementar -->
+                <!-- Item de educação 2: Inglês -->
                 <div class="education-item">
                     <h3>Inglês Avançado</h3>
                     <p><strong>Cambridge English - Key English Test (KET)</strong> | Concluído em 2015</p>
                 </div>
 
-                <!-- Item de educação 3: Curso Complementar -->
+                <!-- Item de educação 3: Office -->
                 <div class="education-item">
                     <h3>Pacote Office</h3>
-                    <p><strong>Pacote Office 2016 (KET)</strong> | Concluído em 2024</p>
+                    <p><strong>Pacote Office 2016</strong> | Concluído em 2024</p>
                 </div>
             </section>
 
             <!-- ========================================
-                SEÇÃO 3: PROJETOS (PORTFÓLIO)
-                ======================================== -->
+                 SEÇÃO 3: PROJETOS (PORTFÓLIO)
+                 ======================================== -->
             <section id="projetos" class="section">
                 <h2>Meus Projetos</h2>
                 
-                <!-- Grid responsivo com 3 cards -->
+                <!-- Grid responsivo com cards de projetos -->
                 <div class="projects-grid">
                     
                     <!-- CARD 1: Portfólio Pessoal -->
                     <div class="project-card">
                         <!-- Imagem do projeto -->
-                        <img src="img/portfolio-print.jpg" alt="Preview do Portfólio" class="project-image">
+                        <img src="img/portfolio-print.jpg" alt="Captura de tela do meu Portfólio Pessoal" class="project-image">
                         
                         <!-- Informações do projeto -->
-                        <h3>Portfólio Pessoal</h3>
-                        <p>Site desenvolvido com HTML5, CSS3 e JavaScript puro. Inclui modo escuro, validação de formulário e design responsivo.</p>
+                        <h3>Portfólio Pessoal (Web Dev)</h3>
+                        <p>Meu primeiro projeto de desenvolvimento web, utilizando HTML5, CSS3 puro e JavaScript para validação de formulário e alternância de tema (Claro/Escuro).</p>
                         
-                        <!-- Tags de status e tecnologias -->
-                        <span class="tag">Concluído</span>
-                        <span class="tag">HTML/CSS/JS</span>
+                        <!-- Links do projeto -->
+                        <div class="project-links">
+                            <a href="https://github.com/Fchaves27/meu-portfolio" target="_blank" class="repo-link">
+                                Ver Código
+                            </a>
+                            <a href="https://fchaves27.github.io/meu-portfolio" target="_blank" class="live-link">
+                                Ver Site
+                            </a>
+                        </div>
                     </div>
 
                     <!-- CARD 2: To-Do List -->
                     <div class="project-card">
-                        <!-- Placeholder (emoji em construção) -->
+                        <!-- Placeholder com emoji -->
                         <div class="project-image" style="background: #2c3e50; display: flex; align-items: center; justify-content: center;">
                             <span style="color: white; font-size: 3em;">🚧</span>
                         </div>
@@ -159,24 +179,25 @@
 
                     <!-- CARD 3: PDV de Vendas -->
                     <div class="project-card">
-                        <!-- Placeholder (texto "Code") -->
+                        <!-- Placeholder com texto -->
                         <div class="project-image" style="background: #2c3e50; display: flex; align-items: center; justify-content: center;">
                             <span style="color: white; font-size: 3em;">Code</span>
                         </div>
                         
                         <!-- Informações do projeto -->
                         <h3>PDV de Vendas</h3>
-                        <p>Projeto acadêmico com foco no Micro Empresario</p>
+                        <p>Projeto acadêmico com foco no Micro Empresário</p>
                         
                         <!-- Tag de status -->
                         <span class="tag" style="background: #e67e22;">Planejado</span>
                     </div>
+
                 </div>
             </section>
 
             <!-- ========================================
-                SEÇÃO 4: CONTATO
-                ======================================== -->
+                 SEÇÃO 4: CONTATO
+                 ======================================== -->
             <section id="contato" class="section">
                 <h2>Entre em Contato</h2>
                 
@@ -217,39 +238,51 @@
                         
                         <!-- GitHub -->
                         <a href="https://github.com/Fchaves27" target="_blank" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
                         </a>
                         
                         <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/in/fchaves27/" target="_blank" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
                         </a>
                         
                         <!-- Instagram -->
                         <a href="https://www.instagram.com/felipechaves_27/" target="_blank" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
                         </a>
                         
                         <!-- Facebook -->
                         <a href="https://www.facebook.com/fchaves27" target="_blank" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
                         </a>
                     </div>
                 </div>
             </section>
         </main>
-
+        
         <!-- ========================================
-            5. FOOTER - Rodapé
-            ======================================== -->
+             5. FOOTER - Rodapé
+             ======================================== -->
         <footer>
             <p>&copy; 2025 Felipe Augusto Moreira Chaves. Todos os direitos reservados.</p>
         </footer>
     </div>
 
     <!-- ========================================
-        6. SCRIPTS - JavaScript
-        ======================================== -->
+         6. SCRIPTS - JavaScript
+         ======================================== -->
     <!-- Script que contém toda a lógica: tema, validação, animações -->
     <script src="script.js"></script>
 </body>

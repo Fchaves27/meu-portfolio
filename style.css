@@ -296,7 +296,7 @@ header h1 {
 
 
 /* ========================================
-   9. SEÇÃO PROJETOS - GRID E CARDS
+   9. SEÇÃO PROJETOS - GRID
    ======================================== */
 
 /* Grid responsivo que se adapta ao tamanho da tela */
@@ -307,6 +307,11 @@ header h1 {
     margin-top: 30px;
 }
 
+
+/* ========================================
+   10. SEÇÃO PROJETOS - CARDS
+   ======================================== */
+
 /* Cards com gradiente, efeito hover e overflow hidden */
 .project-card {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -315,6 +320,15 @@ header h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Altera o fundo dos cards quando o modo escuro está ativo */
+body.dark-mode .project-card {
+    background: linear-gradient(135deg, #2a2a40 0%, #16213e 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
 }
 
 /* Efeito de elevação ao passar o mouse */
@@ -342,6 +356,7 @@ header h1 {
     color: var(--text-color);
     font-size: 0.95em;
     margin: 0 20px 15px 20px;
+    flex-grow: 1;
 }
 
 /* Tags de status e tecnologias */
@@ -353,11 +368,60 @@ header h1 {
     border-radius: 20px;
     font-size: 0.85em;
     margin: 0 20px 20px 20px;
+    align-self: flex-start;
 }
 
 
 /* ========================================
-   10. SEÇÃO CONTATO - FORMULÁRIO
+   11. SEÇÃO PROJETOS - LINKS DOS CARDS
+   ======================================== */
+
+/* Container para alinhar os botões */
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin: 0 20px 20px 20px;
+    margin-top: auto;
+}
+
+/* Estilo base para ambos os botões */
+.project-links a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Botão "Ver Código" (GitHub) - Estilo escuro */
+.repo-link {
+    background: #333;
+    color: white;
+}
+
+.repo-link:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+/* Botão "Ver Site" (Live) - Estilo com a cor do tema */
+.live-link {
+    background: var(--title-color);
+    color: white;
+}
+
+.live-link:hover {
+    background: var(--subtitle-color);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   12. SEÇÃO CONTATO - FORMULÁRIO
    ======================================== */
 
 /* Container do formulário com largura máxima */
@@ -402,7 +466,7 @@ header h1 {
 
 
 /* ========================================
-   11. SEÇÃO CONTATO - BOTÃO E FEEDBACK
+   13. SEÇÃO CONTATO - BOTÃO E FEEDBACK
    ======================================== */
 
 /* Botão de envio com gradiente */
@@ -452,7 +516,7 @@ header h1 {
 
 
 /* ========================================
-   12. SEÇÃO CONTATO - REDES SOCIAIS
+   14. SEÇÃO CONTATO - REDES SOCIAIS
    ======================================== */
 
 /* Container das redes sociais */
@@ -491,7 +555,8 @@ header h1 {
 
 /* Fundo dos ícones ajustado para modo escuro */
 body.dark-mode .social-icons-row a {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--title-color);
 }
 
 /* Efeito hover dos ícones */
@@ -521,7 +586,7 @@ body.dark-mode .social-icons-row a {
 
 
 /* ========================================
-   13. FOOTER
+   15. FOOTER
    ======================================== */
 
 /* Rodapé com fundo escuro, texto centralizado e padding */
@@ -535,7 +600,7 @@ footer {
 
 
 /* ========================================
-   14. RESPONSIVIDADE - MOBILE
+   16. RESPONSIVIDADE - TABLET E MOBILE
    ======================================== */
 
 /* Ajustes para telas menores que 768px */
@@ -578,5 +643,14 @@ footer {
 
     .social-icons-row {
         gap: 15px;
+    }
+
+    /* Botões de projeto em coluna no mobile */
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links a {
+        width: 100%;
     }
 }

@@ -93,12 +93,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Usa expressão regular para validar o formato do e-mail
     function isValidEmail(email) {
         // Padrão Regex: texto@texto.extensão
+        // ^[^\s@]+ = começa com um ou mais caracteres que não são espaço ou @
+        // @ = símbolo de arroba obrigatório
+        // [^\s@]+ = um ou mais caracteres que não são espaço ou @
+        // \. = ponto obrigatório
+        // [^\s@]+$ = termina com um ou mais caracteres que não são espaço ou @
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    // --- FUNÇÃO AUXILIAR: Mostrar mensagens ---
-    // Exibe mensagens de sucesso ou erro na página
+    // --- FUNÇÃO AUXILIAR: Mostrar mensagens de feedback ---
+    // Exibe mensagens de sucesso ou erro de forma visual na página
     function showMessage(text, type) {
         if (formMessage) {
             formMessage.textContent = text;                    // Define o texto da mensagem
@@ -109,70 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /* ========================================
-       3. INTERAÇÃO COM CARDS DE PROJETOS
-       ======================================== */
-
-    // Seleciona todos os cards de projetos
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    // Itera sobre cada card de projeto
-    projectCards.forEach(card => {
-        // Adiciona um listener de clique em cada card
-        card.addEventListener('click', function() {
-            // Busca o título (h3) dentro do card
-            const h3 = this.querySelector('h3');
-            
-            // Verifica se o título existe
-            if (h3) {
-                // Extrai o nome do projeto do título
-                const projectName = h3.textContent;
-                
-                // Exibe um alerta quando o card é clicado
-                alert(`Você clicou no ${projectName}!`);
-            }
-        });
-    });
-
-
-    /* ========================================
-       4. EFEITO DE DIGITAÇÃO NO TÍTULO
-       ======================================== */
-
-    // Seleciona o título no header (h1)
-    const title = document.querySelector('header h1');
-    
-    // Verifica se o título existe
-    if (title) {
-        // Armazena o texto original
-        const originalText = title.textContent;
-        
-        // Limpa o conteúdo do título
-        title.textContent = '';
-        
-        // Inicializa contador para caractere atual
-        let i = 0;
-
-        // --- FUNÇÃO: Efeito de digitação (Typewriter) ---
-        // Escreve caractere por caractere com delay
-        function typeWriter() {
-            // Verifica se ainda há caracteres para escrever
-            if (i < originalText.length) {
-                // Adiciona o próximo caractere ao título
-                title.textContent += originalText.charAt(i);
-                i++;
-                
-                // Chama a função novamente após 100ms
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        // Inicia o efeito de digitação
-        typeWriter();
-    }
-
-
-    /* ========================================
-       5. SCROLL SUAVE PARA SEÇÕES
+       3. SCROLL SUAVE PARA SEÇÕES
        ======================================== */
 
     // Seleciona todos os links de navegação que começam com # (âncoras)
@@ -188,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o elemento alvo existe
             if (target) {
                 // Faz scroll suave até o elemento
-                // behavior: 'smooth' = animação suave
+                // behavior: 'smooth' = animação suave de 0.5s
                 // block: 'start' = alinha o topo do elemento com o topo da viewport
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -198,4 +140,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
+    /* ========================================
+       4. EFEITO DE DIGITAÇÃO NO TÍTULO
+       ======================================== */
+
+    // Seleciona o título no header (h1)
+    const title = document.querySelector('header h1');
+    
+    // Verifica se o título existe na página
+    if (title) {
+        // Armazena o texto original do título
+        const originalText = title.textContent;
+        
+        // Limpa o conteúdo do título para começar a animar
+        title.textContent = '';
+        
+        // Inicializa contador para rastrear qual caractere escrever
+        let i = 0;
+
+        // --- FUNÇÃO: Efeito de digitação (Typewriter) ---
+        // Escreve caractere por caractere com delay entre eles
+        function typeWriter() {
+            // Verifica se ainda há caracteres para escrever
+            if (i < originalText.length) {
+                // Adiciona o próximo caractere ao título
+                title.textContent += originalText.charAt(i);
+                
+                // Incrementa o contador
+                i++;
+                
+                // Chama a função novamente após 100ms (velocidade da digitação)
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Inicia o efeito de digitação quando o documento carrega
+        typeWriter();
+    }
+
+
+    /* ========================================
+       5. INTERAÇÃO COM CARDS DE PROJETOS
+       ======================================== */
+
+    // Seleciona todos os cards de projetos da página
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Itera sobre cada card de projeto encontrado
+    projectCards.forEach(card => {
+        // Adiciona um listener de clique em cada card
+        card.addEventListener('click', function() {
+            // Busca o título (h3) dentro do card
+            const h3 = this.querySelector('h3');
+            
+            // Verifica se o título existe no card
+            if (h3) {
+                // Extrai o nome do projeto a partir do texto do título
+                const projectName = h3.textContent;
+                
+                // Exibe um alerta quando o card é clicado
+                // Nota: Em produção, isso poderia abrir um modal ou redirecionar para detalhes
+                alert(`Você clicou no ${projectName}!`);
+            }
+        });
+    });
+
 });
+
+/* ========================================
+   FIM DO DOCUMENTO
+   ======================================== */
